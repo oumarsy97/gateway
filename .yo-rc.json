@@ -13,7 +13,7 @@
     "devDatabaseType": "mysql",
     "enableHibernateCache": null,
     "enableTranslation": true,
-    "entities": [],
+    "entities": ["Produit"],
     "feignClient": null,
     "jhipsterVersion": "8.8.0",
     "jwtSecretKey": "YTYxMWQ2NmY1YzFmYThmZTliYjBmMzg3NzcxOThjZGQ2YTMwZjU0YzNiMWQ5OGRkMDc5NWViNDgwNjgxYjY2YjNlODZlNjAwMDk5NThlY2Y4NmFjNmMwMWMxOTc4NDQwOTlmMjY0YTQzOGU3MzBiYzQ3M2Y5NTI3MTE4NTE4YjY=",

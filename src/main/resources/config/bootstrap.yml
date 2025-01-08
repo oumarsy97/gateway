@@ -9,6 +9,14 @@ spring:
       password: admin
       roles: USER,ADMIN
   cloud:
+    gateway:
+      routes:
+        - id: service1
+          uri: lb://service1
+          predicates:
+            - Path=/services/service1/**
+          filters:
+            - StripPrefix=2
     config:
       server:
         composite:
