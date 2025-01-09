@@ -21,6 +21,7 @@ type ProduitFormGroupContent = {
   libelle: FormControl<IProduit['libelle']>;
   quantite: FormControl<IProduit['quantite']>;
   price: FormControl<IProduit['price']>;
+  quatite: FormControl<IProduit['quatite']>;
 };
 
 export type ProduitFormGroup = FormGroup<ProduitFormGroupContent>;
@@ -45,6 +46,9 @@ export class ProduitFormService {
         validators: [Validators.required],
       }),
       price: new FormControl(produitRawValue.price, {
+        validators: [Validators.required],
+      }),
+      quatite: new FormControl(produitRawValue.quatite, {
         validators: [Validators.required],
       }),
     });

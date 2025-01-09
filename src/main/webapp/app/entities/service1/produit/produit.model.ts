@@ -3,6 +3,7 @@ export interface IProduit {
   libelle?: string | null;
   quantite?: number | null;
   price?: number | null;
+  quatite?: number | null;
 }
 
 export type NewProduit = Omit<IProduit, 'id'> & { id: null };

@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-      <h2 id="jhi-produit-heading" data-cy="ProduitCreateUpdateHeading" jhiTranslate="gatewayApp.service1Produit.home.createOrEditLabel">
-        Créer ou éditer un Produit
+      <h2 id="jhi-legume-heading" data-cy="LegumeCreateUpdateHeading" jhiTranslate="gatewayApp.service1Legume.home.createOrEditLabel">
+        Créer ou éditer un Legume
       </h2>
 
       <div>
@@ -10,38 +10,27 @@
 
         @if (editForm.controls.id.value !== null) {
           <div class="mb-3">
-            <label class="form-label" for="field_id" jhiTranslate="gatewayApp.service1Produit.id">ID</label>
+            <label class="form-label" for="field_id" jhiTranslate="gatewayApp.service1Legume.id">ID</label>
             <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
           </div>
         }
 
+        @let libelleRef = editForm.get('libelle')!;
         <div class="mb-3">
-          <label class="form-label" for="field_libelle" jhiTranslate="gatewayApp.service1Produit.libelle">Libelle</label>
+          <label class="form-label" for="field_libelle" jhiTranslate="gatewayApp.service1Legume.libelle">Libelle</label>
           <input type="text" class="form-control" name="libelle" id="field_libelle" data-cy="libelle" formControlName="libelle" />
-        </div>
-
-        @let quantiteRef = editForm.get('quantite')!;
-        <div class="mb-3">
-          <label class="form-label" for="field_quantite" jhiTranslate="gatewayApp.service1Produit.quantite">Quantite</label>
-          <input type="number" class="form-control" name="quantite" id="field_quantite" data-cy="quantite" formControlName="quantite" />
-          @if (quantiteRef.invalid && (quantiteRef.dirty || quantiteRef.touched)) {
+          @if (libelleRef.invalid && (libelleRef.dirty || libelleRef.touched)) {
             <div>
-              @if (editForm.get('quantite')?.errors?.required) {
+              @if (editForm.get('libelle')?.errors?.required) {
                 <small class="form-text text-danger" jhiTranslate="entity.validation.required">Ce champ est obligatoire.</small>
               }
-              <small
-                class="form-text text-danger"
-                [hidden]="!editForm.get('quantite')?.errors?.number"
-                jhiTranslate="entity.validation.number"
-                >Ce champ doit être un nombre.</small
-              >
             </div>
           }
         </div>
 
         @let priceRef = editForm.get('price')!;
         <div class="mb-3">
-          <label class="form-label" for="field_price" jhiTranslate="gatewayApp.service1Produit.price">Price</label>
+          <label class="form-label" for="field_price" jhiTranslate="gatewayApp.service1Legume.price">Price</label>
           <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
           @if (priceRef.invalid && (priceRef.dirty || priceRef.touched)) {
             <div>
@@ -55,18 +44,18 @@
           }
         </div>
 
-        @let quatiteRef = editForm.get('quatite')!;
+        @let quantiteRef = editForm.get('quantite')!;
         <div class="mb-3">
-          <label class="form-label" for="field_quatite" jhiTranslate="gatewayApp.service1Produit.quatite">Quatite</label>
-          <input type="number" class="form-control" name="quatite" id="field_quatite" data-cy="quatite" formControlName="quatite" />
-          @if (quatiteRef.invalid && (quatiteRef.dirty || quatiteRef.touched)) {
+          <label class="form-label" for="field_quantite" jhiTranslate="gatewayApp.service1Legume.quantite">Quantite</label>
+          <input type="number" class="form-control" name="quantite" id="field_quantite" data-cy="quantite" formControlName="quantite" />
+          @if (quantiteRef.invalid && (quantiteRef.dirty || quantiteRef.touched)) {
             <div>
-              @if (editForm.get('quatite')?.errors?.required) {
+              @if (editForm.get('quantite')?.errors?.required) {
                 <small class="form-text text-danger" jhiTranslate="entity.validation.required">Ce champ est obligatoire.</small>
               }
               <small
                 class="form-text text-danger"
-                [hidden]="!editForm.get('quatite')?.errors?.number"
+                [hidden]="!editForm.get('quantite')?.errors?.number"
                 jhiTranslate="entity.validation.number"
                 >Ce champ doit être un nombre.</small
               >

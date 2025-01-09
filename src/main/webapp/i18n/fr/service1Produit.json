@@ -17,7 +17,8 @@
       "id": "ID",
       "libelle": "Libelle",
       "quantite": "Quantite",
-      "price": "Price"
+      "price": "Price",
+      "quatite": "Quatite"
     }
   },
   "service1App": {

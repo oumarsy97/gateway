@@ -1,21 +1,21 @@
 <div>
-  <h2 id="page-heading" data-cy="ProduitHeading">
-    <span jhiTranslate="gatewayApp.service1Produit.home.title">Produits</span>
+  <h2 id="page-heading" data-cy="LegumeHeading">
+    <span jhiTranslate="gatewayApp.service1Legume.home.title">Legumes</span>
 
     <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
-        <span jhiTranslate="gatewayApp.service1Produit.home.refreshListLabel">Actualiser la liste</span>
+        <span jhiTranslate="gatewayApp.service1Legume.home.refreshListLabel">Actualiser la liste</span>
       </button>
 
       <button
         id="jh-create-entity"
         data-cy="entityCreateButton"
-        class="btn btn-primary jh-create-entity create-produit"
-        [routerLink]="['/produit/new']"
+        class="btn btn-primary jh-create-entity create-legume"
+        [routerLink]="['/legume/new']"
       >
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="gatewayApp.service1Produit.home.createLabel">Créer un nouveau Produit</span>
+        <span jhiTranslate="gatewayApp.service1Legume.home.createLabel">Créer un nouveau Legume</span>
       </button>
     </div>
   </h2>
@@ -24,9 +24,9 @@
 
   <jhi-alert></jhi-alert>
 
-  @if (produits().length === 0) {
+  @if (legumes().length === 0) {
     <div class="alert alert-warning" id="no-result">
-      <span jhiTranslate="gatewayApp.service1Produit.home.notFound">Aucun Produit trouvé</span>
+      <span jhiTranslate="gatewayApp.service1Legume.home.notFound">Aucun Legume trouvé</span>
     </div>
   } @else {
     <div class="table-responsive table-entities" id="entities">
@@ -42,28 +42,21 @@
             </th>
             <th scope="col" jhiSortBy="libelle">
               <div class="d-flex">
-                <span jhiTranslate="gatewayApp.service1Produit.libelle">Libelle</span>
-
-                <fa-icon class="p-1" icon="sort"></fa-icon>
-              </div>
-            </th>
-            <th scope="col" jhiSortBy="quantite">
-              <div class="d-flex">
-                <span jhiTranslate="gatewayApp.service1Produit.quantite">Quantite</span>
+                <span jhiTranslate="gatewayApp.service1Legume.libelle">Libelle</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="price">
               <div class="d-flex">
-                <span jhiTranslate="gatewayApp.service1Produit.price">Price</span>
+                <span jhiTranslate="gatewayApp.service1Legume.price">Price</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
-            <th scope="col" jhiSortBy="quatite">
+            <th scope="col" jhiSortBy="quantite">
               <div class="d-flex">
-                <span jhiTranslate="gatewayApp.service1Produit.quatite">Quatite</span>
+                <span jhiTranslate="gatewayApp.service1Legume.quantite">Quantite</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
@@ -72,28 +65,27 @@
           </tr>
         </thead>
         <tbody>
-          @for (produit of produits(); track trackId(produit)) {
+          @for (legume of legumes(); track trackId(legume)) {
             <tr data-cy="entityTable">
               <td>
-                <a [routerLink]="['/produit', produit.id, 'view']">{{ produit.id }}</a>
+                <a [routerLink]="['/legume', legume.id, 'view']">{{ legume.id }}</a>
               </td>
-              <td>{{ produit.libelle }}</td>
-              <td>{{ produit.quantite }}</td>
-              <td>{{ produit.price }}</td>
-              <td>{{ produit.quatite }}</td>
+              <td>{{ legume.libelle }}</td>
+              <td>{{ legume.price }}</td>
+              <td>{{ legume.quantite }}</td>
               <td class="text-end">
                 <div class="btn-group">
-                  <a [routerLink]="['/produit', produit.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                  <a [routerLink]="['/legume', legume.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
                     <fa-icon icon="eye"></fa-icon>
                     <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Voir</span>
                   </a>
 
-                  <a [routerLink]="['/produit', produit.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                  <a [routerLink]="['/legume', legume.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
                     <fa-icon icon="pencil-alt"></fa-icon>
                     <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editer</span>
                   </a>
 
-                  <button type="submit" (click)="delete(produit)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                  <button type="submit" (click)="delete(legume)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
                     <fa-icon icon="times"></fa-icon>
                     <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Supprimer</span>
                   </button>

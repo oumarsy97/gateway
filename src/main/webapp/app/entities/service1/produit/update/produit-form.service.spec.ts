@@ -23,6 +23,7 @@ describe('Produit Form Service', () => {
             libelle: expect.any(Object),
             quantite: expect.any(Object),
             price: expect.any(Object),
+            quatite: expect.any(Object),
           }),
         );
       });
@@ -36,6 +37,7 @@ describe('Produit Form Service', () => {
             libelle: expect.any(Object),
             quantite: expect.any(Object),
             price: expect.any(Object),
+            quatite: expect.any(Object),
           }),
         );
       });

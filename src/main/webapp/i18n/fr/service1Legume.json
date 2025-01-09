@@ -1,0 +1,30 @@
+{
+  "gatewayApp": {
+    "service1Legume": {
+      "home": {
+        "title": "Legumes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Legume",
+        "createOrEditLabel": "Créer ou éditer un Legume",
+        "notFound": "Aucun Legume trouvé"
+      },
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Legume {{ id }} ?"
+      },
+      "detail": {
+        "title": "Legume"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "price": "Price",
+      "quantite": "Quantite"
+    }
+  },
+  "service1App": {
+    "service1Legume": {
+      "created": "Un nouveau Legume a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Legume avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Legume avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}
